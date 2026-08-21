@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T4MR1N</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center/cover fixed;
+      display: flex; justify-content: center; align-items: center; padding: 20px;
+      flex-direction: column;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(25px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 30px; padding: 35px; width: 90%; max-width: 600px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      color: white; text-align: center; margin-bottom: 20px;
+    }
+    .menu { margin-bottom: 25px; display: flex; justify-content: center; gap: 10px; }
+    .menu button {
+      background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white; padding: 10px 22px; border-radius: 15px; cursor: pointer; transition: 0.3s;
+    }
+    .menu button:hover { background: rgba(255, 255, 255, 0.25); transform: scale(1.05); }
+    .page { display: none; } .page.active { display: block; }
+    h1 { font-size: 2.5em; letter-spacing: 3px; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); margin-bottom: 10px; }
+    .first-text {
+      font-size: 15px; color: #00c3ff; margin-bottom: 20px; 
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #00c3ff; }
+      to { text-shadow: 0 0 20px #00c3ff, 0 0 30px #00c3ff; }
+    }
+    .thanks-btn {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white; padding: 18px 40px; font-size: 18px; font-weight: bold;
+      border-radius: 20px; margin-top: 20px; cursor: pointer;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transition: 0.3s;
+    }
+    .thanks-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+    #thanksMsg {
+      margin-top: 15px; font-size: 16px; color: #00ff88; display: none;
+    }
+    .footer {
+      background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 20px; padding: 15px 25px;
+      color: rgba(255,255,255,0.8); font-size: 14px; text-align: center;
+    }
+    .footer b { color: #00c3ff; letter-spacing: 1px; }
+  </style>
+</head>
+<body>
+  <div class="glass">
+    <h1>T4MR1N</h1>
+    <p class="first-text">heyyyyy Guyzzzzz eta amr lifer banano first website 😝</p>
+    
+    <div class="menu">
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('about')">About</button>
+      <button onclick="showPage('contact')">Contact</button>
+    </div>
+
+    <div id="home" class="page active">
+      <h2>Welcome to my website</h2>
+      <p style="margin:15px 0; color:rgba(255,255,255,0.9);">iPhone Liquid Glass Effect 💧</p>
+      <button class="thanks-btn" onclick="showThanks()">Click Me</button>
+      <p id="thanksMsg"></p>
+    </div>
+
+    <div id="about" class="page">
+      <h2>About</h2>
+      <p>Ami T4MR1N. Eta amar prothom website.</p>
+    </div>
+
+    <div id="contact" class="page">
+      <h2>Contact</h2>
+      <p>📱 WhatsApp: 01616665805</p>
+      <p>📧 Gmail: tajmirulislamt@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    DEVELOPED BY <b>T4MR1N</b> | © 2026 All Rights Reserved 💧
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+    function showThanks() {
+      document.getElementById('thanksMsg').innerHTML = "Thanks for visiting ts website -Dev T4MR1N 💧";
+      document.getElementById('thanksMsg').style.display = "block";
+    }
+  </script>
+</body>
+</html>
